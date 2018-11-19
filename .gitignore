@@ -1,0 +1,9 @@
+cmake-build-debug
+*.pdf
+*.png
+*.log
+*.tex
+*.toc
+*.aux
+*.bcf
+*.gz
