@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(PS2)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 set(BUILD_1 main)
 set(SOURCE_FILES_1 Q1.cpp)
