@@ -10,11 +10,11 @@
 #define SICK 0x02
 #define IMMUNE 0x04
 
-const int initial = 100;
-const int maxPop = 200000;
-const int infectiousness = 50;
-const int deathRate = 1;
-const int recoveryRate = 12;
+const size_t initial = 100;
+const size_t maxPop = 200000;
+const unsigned int infectiousness = 50;
+const unsigned int deathRate = 1;
+const unsigned int recoveryRate = 12;
 
 unsigned int fate_tester(int odds) {
     return static_cast<unsigned int>(ceil(static_cast<double>(rand()) / (static_cast<long>(RAND_MAX)) * odds));
@@ -167,8 +167,8 @@ int main() {
                 }
             }
         }
-        unsigned int aliveCount = maxPop - deadCount;
-        int uninfectedCount = maxPop - sickCount - deadCount - recoveredCount;
+        size_t aliveCount = maxPop - deadCount;
+        size_t uninfectedCount = maxPop - sickCount - deadCount - recoveredCount;
         scaledMeetingsPerDay = (50000.0/200000)*aliveCount;
         brains << i << "," << sickCount << "," << uninfectedCount << "," << recoveredCount << "," << aliveCount << ","
                << deadCount << "," << "\r" << std::endl;
