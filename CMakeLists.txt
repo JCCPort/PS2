@@ -19,3 +19,7 @@ add_executable(${BUILD_2b} ${SOURCE_FILES_2b})
 set(BUILD_3 main_3)
 set(SOURCE_FILES_3 Q3.cpp)
 add_executable(${BUILD_3} ${SOURCE_FILES_3})
+
+set(BUILD_4 main_4)
+set(SOURCE_FILES_4 Q4.cpp)
+add_executable(${BUILD_4} ${SOURCE_FILES_4})
