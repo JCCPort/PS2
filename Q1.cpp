@@ -110,6 +110,9 @@ int main() {
     cube.set(2.0, densityIron);
     cylinder.set(2.0, 2.0, densityIron);
     cone.set(2.0, 2.0, densityIron);
+
+    std::cout << cylinder.GetArea() << "    " << cylinder.GetMass() << std::endl;
+
     std::cout << "Shape\t\t\tSurface-to-mass ratio" << std::endl;
     std::cout << "Sphere\t\t\t" << sphere.GetArea()/sphere.GetMass() << std::endl;
     std::cout << "Cube\t\t\t" << cube.GetArea()/cube.GetMass() << std::endl;

@@ -7,7 +7,7 @@
 #include <chrono> //For timing the code.
 
 
-unsigned int fate_tester(int odds) {
+unsigned int fate_tester(unsigned int odds) {
     return static_cast<unsigned int>(ceil(static_cast<double>(rand()) / (static_cast<long>(RAND_MAX)) * odds));
 }
 
@@ -23,13 +23,13 @@ public:
     }
 
     void sickDay(){
-        unsigned int recoveryScore = fate_tester(100);
-        unsigned int deathScore = fate_tester(100);
-        if(recoveryScore <= 12){
+        // Change was made here so that only one random number needs to be generated here.
+        unsigned int score = fate_tester(100);
+        if(score <= 12){
             I = false;
             R = true;
         }
-        else if(deathScore <= 1){
+        else if(score > 99){
             A = false;
         }
     };
@@ -71,6 +71,7 @@ int simulate(const bool debug = false){
     srand(static_cast<unsigned int>(time(nullptr)));
     const int maxPop = 200000;
     const int runLength = 365;
+    // KEEP THIS CONSTANT AT 50000
     const int meetingsPerDay = 50000;
     std::vector<Person> population;
 
@@ -124,7 +125,11 @@ int simulate(const bool debug = false){
 
             Person& personOne = population[personOneSeed];
             Person& personTwo = population[personTwoSeed];
-            if(!personOne.checkAlive() or !personTwo.checkAlive() or personOne.checkImmune() or personTwo.checkImmune()){
+            if(!personOne.checkAlive() or !personTwo.checkAlive()){
+                j--;
+                continue;
+            }
+            if(personOne.checkImmune() or personTwo.checkImmune()){
                 continue;
             }
             else{
@@ -221,5 +226,5 @@ int simulate(const bool debug = false){
 }
 
 int main(){
-    simulate();
+    simulate(true);
 }
