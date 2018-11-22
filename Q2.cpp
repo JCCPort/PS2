@@ -89,7 +89,7 @@ int simulate(const bool debug = false){
     /**--------------------------------------------------------------------------------------------------------------*/
     auto finishOne = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedOne = finishOne - startOne;
-    std::cout << "Time taken to generate population:\t\t" << elapsedOne.count() << " s" << std::endl;
+    std::cout << "\n\nTime taken to generate population:\t\t" <<  std::fixed << std::setprecision(3) << elapsedOne.count() << " s" << std::endl;
 
     std::ofstream brains;
     brains.open("Pandemic.csv");
@@ -135,18 +135,6 @@ int simulate(const bool debug = false){
 
             Person& personOne = population[personOneSeed];
             Person& personTwo = population[personTwoSeed];
-//            bool personOneSick = personOne.checkInfected();
-//            bool personTwoSick = personTwo.checkInfected();
-//            bool personOneAlive = personOne.checkAlive();
-//            bool personTwoAlive = personTwo.checkAlive();
-//            bool personOneImmune = personOne.checkImmune();
-//            bool personTwoImmune = personTwo.checkImmune();
-//            int var = (personOneAlive + personTwoAlive) * (1 + personOneImmune + personTwoImmune) + personOneSick + 2 * personTwoSick;
-//            switch(var){
-//                case 0 :
-//                    continue;
-//                case
-//            }
             if(!personOne.checkAlive() or !personTwo.checkAlive()){
                 j--;
                 continue;
@@ -224,16 +212,16 @@ int simulate(const bool debug = false){
     double meanLoopThreeTime = loopThreeTotal/runLength;
     auto finishTwo = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedTwo = finishTwo - startTwo;
-    std::cout << "Entire year simulation took:\t\t\t" << elapsedTwo.count() << " s " << std::endl;
-    std::cout << "All meetings took:\t\t\t\t" << loopThreeTotal << " s " << std::endl;
-    std::cout << "Mean duration of day's meetings:\t\t" << meanLoopThreeTime << " s " << std::endl;
-    std::cout << "All population scan took:\t\t" << elapsedTwo.count()-loopThreeTotal << " s " << std::endl;
+    std::cout << "Entire year simulation took:\t\t\t" <<  std::fixed << std::setprecision(3) << elapsedTwo.count() << " s " << std::endl;
+    std::cout << "All meetings took:\t\t\t\t" <<  std::fixed << std::setprecision(3) << loopThreeTotal << " s " << std::endl;
+    std::cout << "Mean duration of day's meetings:\t\t" <<  std::fixed << std::setprecision(3) << meanLoopThreeTime << " s " << std::endl;
+    std::cout << "All population scan took:\t\t\t" <<  std::fixed << std::setprecision(3) << elapsedTwo.count()-loopThreeTotal << " s " << std::endl;
 
-    std::cout << "\n\nSick: \t\t\t" << std::fixed << std::setprecision(2) <<  sickCount/2000. << "%" << std::endl;
-    std::cout << "Alive: \t\t\t" << std::fixed << std::setprecision(2) <<  aliveCount/2000. << "%" << std::endl;
-    std::cout << "Dead: \t\t\t" << std::fixed << std::setprecision(2) <<  deadCount/2000. << "%" << std::endl;
-    std::cout << "Immune: \t\t" << std::fixed << std::setprecision(2) <<  recoveredCount/2000. << "%" << std::endl;
-    std::cout << "Never infected: \t" << std::fixed << std::setprecision(2) <<  neverInfected/2000. << "%" << std::endl;
+    std::cout << "\n\nSick:\t\t\t" << std::fixed << std::setprecision(2) <<  sickCount/2000. << "%" << std::endl;
+    std::cout << "Alive:\t\t\t" << std::fixed << std::setprecision(2) <<  aliveCount/2000. << "%" << std::endl;
+    std::cout << "Dead:\t\t\t" << std::fixed << std::setprecision(2) <<  deadCount/2000. << "%" << std::endl;
+    std::cout << "Immune:\t\t\t" << std::fixed << std::setprecision(2) <<  recoveredCount/2000. << "%" << std::endl;
+    std::cout << "Never infected:\t\t" << std::fixed << std::setprecision(2) <<  neverInfected/2000. << "%" << std::endl;
     return 1;
 }
 
