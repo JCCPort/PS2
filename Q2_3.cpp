@@ -13,6 +13,9 @@ unsigned int fateTester(unsigned int odds) {
 
 class Person {
 public:
+    static const char recoveryRate = 12;
+    static const unsigned int deathRate = 100;
+    static const char infectionRate = 1;
     /** Initialises the class instance manually so that the number of initially infected can be changed.
      * @param cond
      * Conditions:
@@ -31,10 +34,10 @@ public:
      */
     void sickDay(){
         auto score = static_cast<__int8_t>(fateTester(100));
-        if(score <= 12){
+        if(score <= recoveryRate){
             condition = 2;
         }
-        else if(score >= 100){
+        else if(score >= deathRate){
             condition = 3;
         }
     };
@@ -54,7 +57,7 @@ public:
     void meetInfected(){
         if(condition == 0){
             auto infectionScore = static_cast<__int8_t>(fateTester(2));
-            if(infectionScore <= 1){
+            if(infectionScore <= infectionRate){
                 condition = 1;
             }
         }
