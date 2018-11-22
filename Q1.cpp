@@ -59,11 +59,11 @@ public :
     };
 
     double GetMass() {
-        return pow((M_PI * radius), 2.0) * height * density;
+        return M_PI * pow(radius, 2.0) * height * density;
     }
 
     double GetArea() {
-        return M_PI * diameter + 2.0 * pow((M_PI * radius), 2.0);
+        return 2.0 * M_PI * radius * height + 2.0 * M_PI * pow((radius), 2.0);
     }
 
 private :
@@ -110,8 +110,6 @@ int main() {
     cube.set(2.0, densityIron);
     cylinder.set(2.0, 2.0, densityIron);
     cone.set(2.0, 2.0, densityIron);
-
-    std::cout << cylinder.GetArea() << "    " << cylinder.GetMass() << std::endl;
 
     std::cout << "Shape\t\t\tSurface-to-mass ratio" << std::endl;
     std::cout << "Sphere\t\t\t" << sphere.GetArea()/sphere.GetMass() << std::endl;

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ca52b7fa-06a2-451b-ad54-53b03600a4ab" name="sussex" url="http://unix.central.susx.ac.uk">
-        <fileTransfer host="unix.central.susx.ac.uk" port="22" rootFolder="/its/home/jp462/i2cpp/week5" accessType="SFTP">
+      <webServer id="ca52b7fa-06a2-451b-ad54-53b03600a4ab" name="Sussex" url="http://unix.central.susx.ac.uk">
+        <fileTransfer host="unix.central.susx.ac.uk" port="22" rootFolder="/its/home/jp462/i2cpp/week9" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
           </advancedOptions>

@@ -26,8 +26,8 @@ void swapr(double &firstValue, double &secondValue){
 
 
 void transpose(double table[3][3]){
-    for(int i = 0; i <= 2; i++){
-        for(int j = 0; j < i; j++){
+    for(unsigned int i = 0; i <= 2; i++){
+        for(unsigned int j = 0; j < i; j++){
             if(i!=j){
                 swapr(table[i][j], table[j][i]);
             }
@@ -37,9 +37,9 @@ void transpose(double table[3][3]){
 
 void printm(double array[3][3]){
     std::cout <<  top << std::endl;
-    for(int i = 0; i <= 2; i++){
+    for(unsigned int i = 0; i <= 2; i++){
         std::cout << sep;
-        for(int j = 0; j <= 2; j++){
+        for(unsigned int j = 0; j <= 2; j++){
             std::cout << std::setw(7) << std::fixed << std::setprecision(2) << array[i][j] << "  " << sep;
         }
         if(i<2){
