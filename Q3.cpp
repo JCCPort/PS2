@@ -15,9 +15,9 @@ const std::string bottom = "└---------┴---------┴---------┘"  ;
 
 
 void swapr(double &firstValue, double &secondValue){
-    double filler = firstValue;
+    double tempValue = firstValue;
     firstValue = secondValue;
-    secondValue = filler;
+    secondValue = tempValue;
 }
 
 

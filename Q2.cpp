@@ -146,6 +146,9 @@ int simulate(const bool debug = false){
     unsigned int deadCount = 0;
     for(unsigned int n = 1; n <= runLength; n++){
 
+        /**
+         * Resetting values to zero at the start of each day.
+         */
         sickCount = 0;
         neverInfected = 0;
         recoveredCount = 0;

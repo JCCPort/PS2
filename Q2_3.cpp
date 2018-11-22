@@ -43,7 +43,7 @@ public:
      * Returns the condition of the Person class instance.
      * @return class instances condition.
      */
-    char getCond(){
+    char getCondition(){
         return condition;
     }
 
@@ -122,6 +122,9 @@ int simulate(const bool debug = false){
 
     for(unsigned int n = 1; n <= runLength; n++){
 
+        /**
+         * Resetting values to zero at the start of each day.
+         */
         sickCount = 0;
         neverInfected = 0;
         recoveredCount = 0;
@@ -146,8 +149,8 @@ int simulate(const bool debug = false){
 
             Person& personOne = population[personOneSeed];
             Person& personTwo = population[personTwoSeed];
-            char personOneCondition = personOne.getCond();
-            char personTwoCondition = personTwo.getCond();
+            char personOneCondition = personOne.getCondition();
+            char personTwoCondition = personTwo.getCondition();
             char jointCondition = static_cast<char>(personOneCondition + 10 * personTwoCondition);
             switch (jointCondition){
                 case 10: {
@@ -215,7 +218,7 @@ int simulate(const bool debug = false){
          * LOOP TWO. BEGINNING OF POPULATION CHECK AND SICK DAYS.
          */
         for (auto &it : population) {
-            switch(it.getCond()){
+            switch(it.getCondition()){
                 case 0:{
                     aliveCount++;
                     goto exit_loop2;
