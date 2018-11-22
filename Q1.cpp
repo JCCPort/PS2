@@ -27,6 +27,7 @@ private :
 };
 
 
+
 class Cube {
 public :
     void set(double l = 0, double rho = 0) {
@@ -46,6 +47,7 @@ private :
     double length;
     double density;
 };
+
 
 
 class Cylinder {
@@ -74,6 +76,7 @@ private :
 };
 
 
+
 class Cone {
 public :
     void set(double d = 0, double h = 0,
@@ -100,6 +103,7 @@ private :
 };
 
 
+
 int main() {
     Sphere sphere{};
     Cube cube{};
@@ -111,9 +115,10 @@ int main() {
     cylinder.set(2.0, 2.0, densityIron);
     cone.set(2.0, 2.0, densityIron);
 
-    std::cout << "Shape\t\t\tSurface-to-mass ratio" << std::endl;
+    std::cout << "\nShape\t\t\tSurface Area/Mass (cm^2 g^-1)" << std::endl;
     std::cout << "Sphere\t\t\t" << sphere.GetArea()/sphere.GetMass() << std::endl;
     std::cout << "Cube\t\t\t" << cube.GetArea()/cube.GetMass() << std::endl;
     std::cout << "Cylinder\t\t" << cylinder.GetArea()/cylinder.GetMass() << std::endl;
-    std::cout << "Cone\t\t\t" << cone.GetArea()/cone.GetMass() << std::endl;
+    std::cout << "Cone\t\t\t" << cone.GetArea()/cone.GetMass() << "\n\n" << std::endl;
+    return 0;
 }

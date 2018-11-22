@@ -16,6 +16,10 @@ set(BUILD_2b main_2b)
 set(SOURCE_FILES_2b Q2_Alt.cpp)
 add_executable(${BUILD_2b} ${SOURCE_FILES_2b})
 
+set(BUILD_23 main_23)
+set(SOURCE_FILES_23 Q2_3.cpp)
+add_executable(${BUILD_23} ${SOURCE_FILES_23})
+
 set(BUILD_3 main_3)
 set(SOURCE_FILES_3 Q3.cpp)
 add_executable(${BUILD_3} ${SOURCE_FILES_3})
