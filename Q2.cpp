@@ -17,14 +17,14 @@ unsigned int fate_tester(unsigned int odds) {
  */
 class Person {
 public:
-    void genesis(bool infected, bool imm=false){
+    void genesis(const bool infected, const bool imm=false){
         I = infected;
         A = true;
         R = imm;
     }
 
     void sickDay(){
-        unsigned int score = fate_tester(100);
+        auto score = static_cast<__int8_t>(fate_tester(100));
         if(score <= 12){
             I = false;
             R = true;
@@ -36,7 +36,7 @@ public:
 
     void meetInfected(){
         if(!R){
-            unsigned int infectionScore = fate_tester(2);
+            auto infectionScore = static_cast<__int8_t>(fate_tester(2));
             if(infectionScore <= 1){
                 I = true;
             }
@@ -69,12 +69,12 @@ private:
 
 int simulate(const bool debug = false){
     srand(static_cast<unsigned int>(time(nullptr)));
-    const int maxPop = 200000;
-    const int runLength = 365;
-    const int meetingsPerDay = 50000;
+    static const int maxPop = 200000;
+    static const int runLength = 365;
+    static const int meetingsPerDay = 50000;
     std::vector<Person> population;
 
-    auto startOne = std::chrono::high_resolution_clock::now();
+    static auto startOne = std::chrono::high_resolution_clock::now();
     /**--------------------------------------------------------------------------------------------------------------*/
     /**
      * LOOP ONE
@@ -87,7 +87,7 @@ int simulate(const bool debug = false){
         }
     }
     /**--------------------------------------------------------------------------------------------------------------*/
-    auto finishOne = std::chrono::high_resolution_clock::now();
+    static auto finishOne = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedOne = finishOne - startOne;
     std::cout << "\n\nTime taken to generate population:\t\t" <<  std::fixed << std::setprecision(3) << elapsedOne.count() << " s" << std::endl;
 
@@ -99,7 +99,7 @@ int simulate(const bool debug = false){
      * LOOP TWO
      */
     double loopThreeTotal = 0;
-    auto startTwo = std::chrono::high_resolution_clock::now();
+    static auto startTwo = std::chrono::high_resolution_clock::now();
     unsigned int sickCount = 0;
     unsigned int neverInfected = 0;
     unsigned int recoveredCount = 0;
@@ -209,8 +209,8 @@ int simulate(const bool debug = false){
 
     }
     /**--------------------------------------------------------------------------------------------------------------*/
-    double meanLoopThreeTime = loopThreeTotal/runLength;
-    auto finishTwo = std::chrono::high_resolution_clock::now();
+    static const double meanLoopThreeTime = loopThreeTotal/runLength;
+    static const auto finishTwo = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedTwo = finishTwo - startTwo;
     std::cout << "Entire year simulation took:\t\t\t" <<  std::fixed << std::setprecision(3) << elapsedTwo.count() << " s " << std::endl;
     std::cout << "All meetings took:\t\t\t\t" <<  std::fixed << std::setprecision(3) << loopThreeTotal << " s " << std::endl;
@@ -226,5 +226,5 @@ int simulate(const bool debug = false){
 }
 
 int main(){
-    simulate(true);
+    simulate();
 }
