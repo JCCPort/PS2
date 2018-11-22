@@ -20,11 +20,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7d37be05-ba38-46c9-b089-4d7a705d1b89" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q1.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q3.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,17 +66,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="12265" />
+          <entry key="cpp" value="12655" />
           <entry key="mm" value="7" />
-          <entry key="txt" value="127" />
+          <entry key="txt" value="128" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="14" />
           <entry key="Doxygen file" value="18" />
-          <entry key="ObjectiveC" value="12254" />
-          <entry key="PLAIN_TEXT" value="113" />
+          <entry key="ObjectiveC" value="12644" />
+          <entry key="PLAIN_TEXT" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -124,12 +121,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="4" />
+            <state relative-caret-position="48">
+              <caret line="229" column="43" selection-start-line="229" selection-start-column="43" selection-end-line="229" selection-end-column="43" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1542886158143" expanded="true" signature="4958:5969" ph="{...}" />
-                <marker date="1542886158143" expanded="false" signature="6917:7442" ph="..." />
+                <marker date="1542888509802" expanded="true" signature="5727:6738" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -138,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="96">
+              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -147,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2_Alt.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-533">
+            <state relative-caret-position="187">
               <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
               <folding>
                 <marker date="1542634099264" expanded="false" signature="1906:2541" ph="..." />
@@ -208,11 +204,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="386" />
-    <option name="y" value="-8" />
-    <option name="width" value="1366" />
-    <option name="height" value="515" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -257,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.main_3">
+  <component name="RunManager" selected="Application.main_2">
     <configuration name="Q1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/Q1.cpp" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -298,23 +293,22 @@
     </list>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="676" y="0" width="697" height="735" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10136157" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21036106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" sideWeight="0.49924356" weight="0.15081967" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.15737705" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4515885" visible="true" weight="0.26229507" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.44270015" visible="true" weight="0.3327787" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3967213" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4515885" weight="0.32459018" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5484115" side_tool="true" visible="true" weight="0.26229507" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4440242" weight="0.32459018" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.55729985" side_tool="true" visible="true" weight="0.3327787" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.4969743" weight="0.11639344" />
       <window_info anchor="right" id="Remote Host" weight="0.32980332" />
@@ -393,16 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q2_Alt.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-533">
-          <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
-          <folding>
-            <marker date="1542634099264" expanded="false" signature="1906:2541" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Q1.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1408">
@@ -413,21 +397,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Q2_Alt.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+          <folding>
+            <marker date="1542634099264" expanded="false" signature="1906:2541" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Q3.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="96">
+          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="4" />
+        <state relative-caret-position="48">
+          <caret line="229" column="43" selection-start-line="229" selection-start-column="43" selection-end-line="229" selection-end-column="43" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1542886158143" expanded="true" signature="4958:5969" ph="{...}" />
-            <marker date="1542886158143" expanded="false" signature="6917:7442" ph="..." />
+            <marker date="1542888509802" expanded="true" signature="5727:6738" ph="{...}" />
           </folding>
         </state>
       </provider>
