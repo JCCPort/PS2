@@ -85,8 +85,7 @@ int simulate(const bool debug = false){
 
 
     static auto startOne = std::chrono::high_resolution_clock::now();
-    /**--------------------------------------------------------------------------------------------------------------*/
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     /**
      * INITIAL LOOP. GENERATING THE POPULATION.
      */
@@ -100,7 +99,7 @@ int simulate(const bool debug = false){
     /**
      * END OF INITIAL LOOP - POPULATION GENERATION.
      */
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     static auto finishOne = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedOne = finishOne - startOne;
     std::cout << "\nTime taken to generate population:\t\t" <<  std::fixed << std::setprecision(3) << elapsedOne.count() << " s" << std::endl;
@@ -109,8 +108,7 @@ int simulate(const bool debug = false){
     std::ofstream brains;
     brains.open("Pandemic.csv");
     brains << "Day,Infected,Uninfected,Immune,Alive,Dead\r";
-    /**--------------------------------------------------------------------------------------------------------------*/
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     /**
      * MAIN LOOP. BEGINNING OF YEAR SIMULATION.
      */
@@ -135,14 +133,17 @@ int simulate(const bool debug = false){
         deadCount = 0;
 
 
-        /**--------------------------------------------------------------------------------------------------------------*/
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
         /**
          * LOOP ONE. BEGINNING OF DAILY MEETINGS.
          */
         auto startThree = std::chrono::high_resolution_clock::now();
         for(unsigned int j = 1; j <= meetingsPerDay; j++) {
 
+            /**
+             * Creating two seeds to randomly select two members of the population, then checking that
+             * they are not equal (one person meeting themselves).
+             */
             unsigned int personOneSeed = fateTester(maxPop);
             unsigned int personTwoSeed = fateTester(maxPop);
             if(personOneSeed == personTwoSeed){
@@ -150,60 +151,43 @@ int simulate(const bool debug = false){
                 continue;
             }
 
+            /**
+             * Creating references to two instances in the population vector.
+             */
             Person& personOne = population[personOneSeed];
             Person& personTwo = population[personTwoSeed];
             char personOneCondition = personOne.getCondition();
             char personTwoCondition = personTwo.getCondition();
+            /**
+             * jointCondition is a way of combining the condition of each person in such a way that
+             * the switch statement can be used.
+             */
             char jointCondition = static_cast<char>(personOneCondition + 10 * personTwoCondition);
             switch (jointCondition){
                 case 10: {
                     personOne.meetInfected();
-                    goto exitLoop;
+                    continue;
                 }
 
                 case 1: {
                     personTwo.meetInfected();
-                    goto exitLoop;
+                    continue;
                 }
-
-                case 3: {
-                    j--;
-                    goto exitLoop;
-                }
-
-                case 13: {
-                    j--;
-                    goto exitLoop;
-                }
-
-                case 23: {
-                    j--;
-                    goto exitLoop;
-                }
-
-                case 30: {
-                    j--;
-                    goto exitLoop;
-                }
-
-                case 31: {
-                    j--;
-                    goto exitLoop;
-                }
-
-                case 32: {
-                    j--;
-                    goto exitLoop;
-                }
-
+                case 3:
+                case 13:
+                case 23:
+                case 30:
+                case 31:
+                case 32:
                 case 33: {
                     j--;
-                    goto exitLoop;
+                    continue;
                 }
 
-                default: goto exitLoop;
+                default:
+                    continue;
             }
-            exitLoop: ;
+
         }
         auto finishThree = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsedThree = finishThree - startThree;
@@ -211,12 +195,11 @@ int simulate(const bool debug = false){
         /**
          * END OF LOOP ONE - DAILY MEETINGS.
          */
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
 
 
 
-        /**--------------------------------------------------------------------------------------------------------------*/
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
         /**
          * LOOP TWO. BEGINNING OF POPULATION CHECK AND SICK DAYS.
          */
@@ -224,31 +207,31 @@ int simulate(const bool debug = false){
             switch(it.getCondition()){
                 case 0:{
                     aliveCount++;
-                    goto exit_loop2;
-                }
-                case 3:{
-                    goto exit_loop2;
+                    continue;
                 }
                 case 1:{
                     aliveCount++;
                     sickCount++;
                     it.sickDay();
-                    goto exit_loop2;
+                    continue;
                 }
                 case 2:{
                     aliveCount++;
                     recoveredCount++;
-                    goto exit_loop2;
+                    continue;
                 }
-                default: goto exit_loop2;
+                default:
+                    continue;
             }
-            exit_loop2: ;
         }
         /**
          * END OF LOOP TWO - POPULATION CHECK AND SICK DAYS.
          */
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
 
+        /**
+         * Defining deadCount and neverInfected here so that they can be used in the debugging snippet.
+         */
         deadCount = maxPop - aliveCount;
         neverInfected = maxPop - sickCount - deadCount - recoveredCount;
         if(debug){
@@ -265,13 +248,13 @@ int simulate(const bool debug = false){
     /**
      * END OF MAIN LOOP - YEAR SIMULATION.
      */
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     brains.close();
 
     static const double meanLoopThreeTime = loopThreeTotal/runLength;
     static const auto finishTwo = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedTwo = finishTwo - startTwo;
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
 
     std::cout << "Entire year simulation took:\t\t\t" <<  std::fixed << std::setprecision(3) << elapsedTwo.count() << " s " << std::endl;
     std::cout << "All meetings took:\t\t\t\t" <<  std::fixed << std::setprecision(3) << loopThreeTotal << " s " << std::endl;

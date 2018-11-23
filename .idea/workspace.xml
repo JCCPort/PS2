@@ -5,11 +5,11 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="PS2" targetName="main_3" />
       <config projectName="PS2" targetName="main_4" />
-      <config projectName="PS2" targetName="main" />
-      <config projectName="PS2" targetName="main_2" />
       <config projectName="PS2" targetName="main_23" />
+      <config projectName="PS2" targetName="main_3" />
+      <config projectName="PS2" targetName="main_2" />
+      <config projectName="PS2" targetName="main" />
       <config projectName="PS2" targetName="main_2b" />
     </generated>
   </component>
@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7d37be05-ba38-46c9-b089-4d7a705d1b89" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q2_3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q2_3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Q3.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,10 +52,10 @@
     <session id="-1554518891">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
@@ -61,12 +64,12 @@
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="15578" />
+          <entry key="cpp" value="17911" />
           <entry key="mm" value="7" />
           <entry key="txt" value="330" />
         </counts>
@@ -74,8 +77,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="22" />
-          <entry key="Doxygen file" value="49" />
-          <entry key="ObjectiveC" value="15536" />
+          <entry key="Doxygen file" value="72" />
+          <entry key="ObjectiveC" value="17846" />
           <entry key="PLAIN_TEXT" value="308" />
         </counts>
       </usages-collector>
@@ -106,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q1.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+            <state relative-caret-position="175">
+              <caret line="191" column="20" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -118,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2_3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+            <state relative-caret-position="-3632">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -133,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="80">
+              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -145,11 +148,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="150" column="11" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="11" />
+            <state relative-caret-position="304">
+              <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1542927179476" expanded="true" signature="6936:7950" ph="{...}" />
+                <marker date="1542974824748" expanded="true" signature="6642:7656" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -158,7 +161,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2_Alt.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
+            <state relative-caret-position="450">
               <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
               <folding>
                 <marker date="1542634099264" expanded="false" signature="1906:2541" ph="..." />
@@ -186,10 +189,11 @@
       <find>Immune</find>
       <find>continue</find>
       <find>goto exit_loop</find>
+      <find>cube</find>
+      <find>cylinder</find>
     </findStrings>
     <replaceStrings>
       <replace>radius</replace>
-      <replace>cone</replace>
       <replace>Two</replace>
       <replace>dead</replace>
       <replace>population[personTwoSeed]</replace>
@@ -200,6 +204,8 @@
       <replace>4</replace>
       <replace>goto exit_loop</replace>
       <replace>break</replace>
+      <replace>cylinder</replace>
+      <replace>cone</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -217,10 +223,10 @@
         <option value="$PROJECT_DIR$/Q2_Alt.cpp" />
         <option value="$PROJECT_DIR$/Q4.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Q1.cpp" />
         <option value="$PROJECT_DIR$/Q3.cpp" />
         <option value="$PROJECT_DIR$/Q2.cpp" />
         <option value="$PROJECT_DIR$/Q2_3.cpp" />
+        <option value="$PROJECT_DIR$/Q1.cpp" />
       </list>
     </option>
   </component>
@@ -272,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.main_2">
+  <component name="RunManager" selected="Application.main">
     <configuration name="Q1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/Q1.cpp" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -319,30 +325,30 @@
     </list>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14818764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1505295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" sideWeight="0.49924356" weight="0.15081967" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.15737705" />
-      <window_info active="true" anchor="bottom" x="582" y="379" width="756" height="282" id="Run" order="2" sideWeight="0.33955225" visible="true" weight="0.3394794" />
+      <window_info active="true" anchor="bottom" x="582" y="379" width="756" height="282" id="Run" order="2" sideWeight="0.32299545" visible="true" weight="0.34590164" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3967213" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.3400853" weight="0.3340564" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.6604478" side_tool="true" visible="true" weight="0.3394794" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.3237519" weight="0.4262295" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.6770045" side_tool="true" visible="true" weight="0.34590164" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49621785" weight="0.43278688" />
-      <window_info anchor="right" id="Remote Host" weight="0.21268657" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49848714" weight="0.3229508" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.21268657" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09541578" />
@@ -422,7 +428,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Alt.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
+        <state relative-caret-position="450">
           <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
           <folding>
             <marker date="1542634099264" expanded="false" signature="1906:2541" ph="..." />
@@ -430,10 +436,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q1.cpp">
+    <entry file="file://$PROJECT_DIR$/Q2.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+        <state relative-caret-position="304">
+          <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1542974824748" expanded="true" signature="6642:7656" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q2_3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3632">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -442,29 +459,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q3.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="80">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q2.cpp">
+    <entry file="file://$PROJECT_DIR$/Q1.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="150" column="11" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1542927179476" expanded="true" signature="6936:7950" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Q2_3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state relative-caret-position="175">
+          <caret line="191" column="20" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

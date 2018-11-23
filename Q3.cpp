@@ -14,13 +14,21 @@ const std::string line =   "├---------┼---------┼---------┤"  ;
 const std::string bottom = "└---------┴---------┴---------┘"  ;
 
 
+/**
+ * Takes two references and swaps the values pointed at in the memory.
+ * @param firstValue
+ * @param secondValue
+ */
 void swapr(double &firstValue, double &secondValue){
     double tempValue = firstValue;
     firstValue = secondValue;
     secondValue = tempValue;
 }
 
-
+/**
+ * Transposes off diagonal elements in a 3x3 matrix.
+ * @param table. Matrix that's entries are passed by reference to the swapr function.
+ */
 void transpose(double table[3][3]){
     for(unsigned char i = 0; i <= 2; i++){
         for(unsigned char j = 0; j < i; j++){
@@ -31,6 +39,11 @@ void transpose(double table[3][3]){
     }
 }
 
+/**
+ * Prints a 3x3 array with a set precision and width so that it fits within the strings defined at the top of this
+ * file.
+ * @param array
+ */
 void printm(double array[3][3]){
     std::cout <<  top << std::endl;
     for(unsigned char i = 0; i <= 2; i++){

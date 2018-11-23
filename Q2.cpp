@@ -109,8 +109,7 @@ int simulate(const bool debug = false){
     std::vector<Person> population;
 
     static auto startOne = std::chrono::high_resolution_clock::now();
-    /**--------------------------------------------------------------------------------------------------------------*/
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     /**
      * INITIAL LOOP. GENERATING THE POPULATION.
      */
@@ -124,7 +123,7 @@ int simulate(const bool debug = false){
     /**
      * END OF INITIAL LOOP - POPULATION GENERATION.
      */
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     static auto finishOne = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedOne = finishOne - startOne;
     std::cout << "\nTime taken to generate population:\t\t" <<  std::fixed << std::setprecision(3) << elapsedOne.count() << " s" << std::endl;
@@ -132,8 +131,9 @@ int simulate(const bool debug = false){
     std::ofstream brains;
     brains.open("Pandemic.csv");
     brains << "Day,Infected,Uninfected,Immune,Alive,Dead\r";
-    /**--------------------------------------------------------------------------------------------------------------*/
-    /**--------------------------------------------------------------------------------------------------------------*/
+
+
+    /**------------------------------------------------------------------------------------------*/
     /**
      * MAIN LOOP. BEGINNING OF YEAR SIMULATION.
      */
@@ -156,14 +156,17 @@ int simulate(const bool debug = false){
         deadCount = 0;
 
 
-        /**--------------------------------------------------------------------------------------------------------------*/
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
         /**
          * LOOP ONE. BEGINNING OF DAILY MEETINGS.
          */
         auto startThree = std::chrono::high_resolution_clock::now();
         for(unsigned int j = 1; j <= meetingsPerDay; j++) {
 
+            /**
+             * Creating two seeds to randomly select two members of the population, then checking that
+             * they are not equal (one person meeting themselves).
+             */
             unsigned int personOneSeed = fateTester(maxPop);
             unsigned int personTwoSeed = fateTester(maxPop);
             if(personOneSeed == personTwoSeed){
@@ -171,6 +174,9 @@ int simulate(const bool debug = false){
                 continue;
             }
 
+            /**
+             * Creating references to two instances in the population vector.
+             */
             Person& personOne = population[personOneSeed];
             Person& personTwo = population[personTwoSeed];
             if(!personOne.checkAlive() or !personTwo.checkAlive()){
@@ -199,12 +205,11 @@ int simulate(const bool debug = false){
         /**
          * END OF LOOP ONE - DAILY MEETINGS.
          */
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
 
 
 
-        /**--------------------------------------------------------------------------------------------------------------*/
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
         /**
          * LOOP TWO. BEGINNING OF POPULATION CHECK AND SICK DAYS.
          */
@@ -239,7 +244,7 @@ int simulate(const bool debug = false){
         /**
          * END OF LOOP TWO - POPULATION CHECK AND SICK DAYS.
          */
-        /**--------------------------------------------------------------------------------------------------------------*/
+        /**------------------------------------------------------------------------------------------*/
 
         deadCount = maxPop - aliveCount;
         neverInfected = maxPop - sickCount - deadCount - recoveredCount;
@@ -257,13 +262,13 @@ int simulate(const bool debug = false){
     /**
      * END OF MAIN LOOP - YEAR SIMULATION.
      */
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
     brains.close();
 
     static const double meanLoopThreeTime = loopThreeTotal/runLength;
     static const auto finishTwo = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedTwo = finishTwo - startTwo;
-    /**--------------------------------------------------------------------------------------------------------------*/
+    /**------------------------------------------------------------------------------------------*/
 
     std::cout << "Entire year simulation took:\t\t\t" <<  std::fixed << std::setprecision(3) << elapsedTwo.count() << " s " << std::endl;
     std::cout << "All meetings took:\t\t\t\t" <<  std::fixed << std::setprecision(3) << loopThreeTotal << " s " << std::endl;
