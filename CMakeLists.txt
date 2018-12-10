@@ -9,7 +9,7 @@ set(SOURCE_FILES_1 Q1.cpp)
 add_executable(${BUILD_1} ${SOURCE_FILES_1})
 
 set(BUILD_2 main_2)
-set(SOURCE_FILES_2 Q2.cpp)
+set(SOURCE_FILES_2 Q2_2.cpp)
 add_executable(${BUILD_2} ${SOURCE_FILES_2})
 
 set(BUILD_2b main_2b)
@@ -17,7 +17,7 @@ set(SOURCE_FILES_2b Q2_Alt.cpp)
 add_executable(${BUILD_2b} ${SOURCE_FILES_2b})
 
 set(BUILD_23 main_23)
-set(SOURCE_FILES_23 Q2_3.cpp)
+set(SOURCE_FILES_23 Q2.cpp)
 add_executable(${BUILD_23} ${SOURCE_FILES_23})
 
 set(BUILD_3 main_3)

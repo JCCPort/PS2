@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <tuple>
+#include <vector>
+
+#define GET_VARIABLE_NAME(Variable) (#Variable)
 
 class Sphere {
 public :
@@ -178,18 +182,31 @@ int main() {
     cylinder.set(2.0, 2.0, densityIron);
     cone.set(2.0, 2.0, densityIron);
 
-    static const double sphereRatio = sphere.GetArea()/sphere.GetMass();
-    static const double cubeRatio = cube.GetArea()/cube.GetMass();
-    static const double cylinderRatio = cylinder.GetArea()/cylinder.GetMass();
-    static const double coneRatio = cone.GetArea()/cone.GetMass();
-    double ratios[] = {sphereRatio, cubeRatio, cylinderRatio, coneRatio};
-    static const double biggestRatio = *std::max_element(ratios, ratios+4);
+    /**
+     * Creating tuples of the name of the shape and it's surface-area to mass ratio
+     */
+    std::tuple<std::string, double> sphereRatio("Sphere", sphere.GetArea()/sphere.GetMass());
+    std::tuple<std::string, double> cubeRatio("Cube", cube.GetArea()/cube.GetMass());
+    std::tuple<std::string, double> cylinderRatio("Cylinder", cylinder.GetArea()/cylinder.GetMass());
+    std::tuple<std::string, double> coneRatio("Cone", cone.GetArea()/cone.GetMass());
+    std::vector<std::tuple<std::string, double>> ratios = {sphereRatio, cubeRatio, cylinderRatio, coneRatio};
+
+    /**
+     * Using max_element to extract the value of the largest surface-area to mass ratio and the name of its
+     * corresponding shape.
+     */
+    auto maxValShape = std::get<std::string>(*max_element(ratios.begin(), ratios.end(),[](auto& l, auto& r)
+        {return std::get<double>(l) < std::get<double>(r);}));
+    auto maxVal = std::get<double>(*max_element(ratios.begin(), ratios.end(),[](auto& l, auto& r)
+        {return std::get<double>(l) < std::get<double>(r);}));
+
     std::cout << "\nShape\t\t\tSurface Area/Mass (cm^2 g^-1)" << std::endl;
-    std::cout << "Sphere\t\t\t" << sphereRatio << std::endl;
-    std::cout << "Cube\t\t\t" << cubeRatio << std::endl;
-    std::cout << "Cylinder\t\t" << cylinderRatio << std::endl;
-    std::cout << "Cone\t\t\t" << coneRatio << std::endl;
-    std::cout << "\nBiggest ratio\t\t" << biggestRatio << "\n\n" << std::endl;
+    std::cout << "Sphere\t\t\t" << std::get<double>(sphereRatio) << std::endl;
+    std::cout << "Cube\t\t\t" << std::get<double>(cubeRatio) << std::endl;
+    std::cout << "Cylinder\t\t" << std::get<double>(cylinderRatio) << std::endl;
+    std::cout << "Cone\t\t\t" << std::get<double>(coneRatio) << std::endl;
+    std::cout << "\nThe shape with the largest surface-area to mass ratio is the " << maxValShape << " at " << maxVal <<
+              " cm^2 g^-1\n\n" << std::endl;
 
 
     return 0;

@@ -10,20 +10,22 @@ unsigned int fateTester(unsigned int odds) {
     return static_cast<unsigned int>(ceil(static_cast<double>(rand()) / (static_cast<unsigned long>(RAND_MAX)) * odds));
 }
 
-/**
- *
- */
+
 class Person {
 public:
-    /**
-     * Initialises the class instance manually so that the number of initially infected can be changed.
-     * @param infected. Initial infection condition.
-     * @param imm. Initial immunity condition.
+    static const char recoveryRate = 12;
+    static const unsigned int deathRate = 100;
+    static const char infectionRate = 1;
+    /** Initialises the class instance manually so that the number of initially infected can be changed.
+     * @param cond
+     * Conditions:
+     * 0 - Healthy, never been infected.
+     * 1 - Infected.
+     * 2 - Immune.
+     * 3 - Dead.
      */
-    void genesis(const bool infected, const bool imm=false){
-        I = infected;
-        A = true;
-        R = imm;
+    void genesis(const bool cond){
+        condition = cond;
     }
 
     /**
@@ -32,68 +34,38 @@ public:
      */
     void sickDay(){
         auto score = static_cast<__int8_t>(fateTester(100));
-        if(score <= 12){
-            I = false;
-            R = true;
+        if(score <= recoveryRate){
+            condition = 2;
         }
-        else if(score >= 100){
-            A = false;
+        else if(score >= deathRate){
+            condition = 3;
         }
     };
+
+    /**
+     * Returns the condition of the Person class instance.
+     * @return class instances condition.
+     */
+    char getCondition(){
+        return condition;
+    }
 
     /**
      * Simulates meeting an infected person. Each time this method is called the Person instance has a 50% chance
      * of catching the illness.
      */
     void meetInfected(){
-        if(!R){
+        if(condition == 0){
             auto infectionScore = static_cast<__int8_t>(fateTester(2));
-            if(infectionScore <= 1){
-                I = true;
+            if(infectionScore <= infectionRate){
+                condition = 1;
             }
         }
     };
-
-    /**
-     * Method used for debugging, allows easy inspection of a Person instances variable values.
-     */
-    void personCondition(){
-        std::cout << "\n\n\n" << std::endl;
-        std::cout << "Alive: " << A << std::endl;
-        std::cout << "Infected: " << I << std::endl;
-        std::cout << "Immune: " << R << std::endl;
-        std::cout << "\n\n\n" << std::endl;
-    }
-
-    /**
-     *
-     * @return Infection status.
-     */
-    bool checkInfected(){
-        return I;
-    }
-
-    /**
-     *
-     * @return Living status.
-     */
-    bool checkAlive(){
-        return A;
-    }
-
-    /**
-     *
-     * @return Immunity status.
-     */
-    bool checkImmune(){
-        return R;
-    }
-
 private:
-    bool I;
-    bool A;
-    bool R;
+    char condition;
 };
+
 
 /**
  *
@@ -103,10 +75,14 @@ private:
  */
 int simulate(const bool debug = false){
     srand(static_cast<unsigned int>(time(nullptr)));
+
+
     static const int maxPop = 200000;
     static const int runLength = 365;
     static const int meetingsPerDay = 50000;
     std::vector<Person> population;
+
+
 
     static auto startOne = std::chrono::high_resolution_clock::now();
     /**------------------------------------------------------------------------------------------*/
@@ -128,11 +104,10 @@ int simulate(const bool debug = false){
     std::chrono::duration<double> elapsedOne = finishOne - startOne;
     std::cout << "\nTime taken to generate population:\t\t" <<  std::fixed << std::setprecision(3) << elapsedOne.count() << " s" << std::endl;
 
+
     std::ofstream brains;
     brains.open("Pandemic.csv");
     brains << "Day,Infected,Uninfected,Immune,Alive,Dead\r";
-
-
     /**------------------------------------------------------------------------------------------*/
     /**
      * MAIN LOOP. BEGINNING OF YEAR SIMULATION.
@@ -144,6 +119,8 @@ int simulate(const bool debug = false){
     unsigned int recoveredCount = 0;
     unsigned int aliveCount = 0;
     unsigned int deadCount = 0;
+
+
     for(unsigned int n = 1; n <= runLength; n++){
 
         /**
@@ -179,25 +156,38 @@ int simulate(const bool debug = false){
              */
             Person& personOne = population[personOneSeed];
             Person& personTwo = population[personTwoSeed];
-            if(!personOne.checkAlive() or !personTwo.checkAlive()){
-                j--;
-                continue;
-            }
-            if(personOne.checkImmune() or personTwo.checkImmune()){
-                continue;
-            }
-            else{
-                bool personOneSick = personOne.checkInfected();
-                bool personTwoSick = personTwo.checkInfected();
-                if(personOneSick != personTwoSick){
-                    if(personOneSick){
-                        population[personTwoSeed].meetInfected();
-                    }
-                    else{
-                        population[personOneSeed].meetInfected();
-                    }
+            char personOneCondition = personOne.getCondition();
+            char personTwoCondition = personTwo.getCondition();
+            /**
+             * jointCondition is a way of combining the condition of each person in such a way that
+             * the switch statement can be used.
+             */
+            char jointCondition = static_cast<char>(personOneCondition + 10 * personTwoCondition);
+            switch (jointCondition){
+                case 10: {
+                    personOne.meetInfected();
+                    continue;
                 }
+
+                case 1: {
+                    personTwo.meetInfected();
+                    continue;
+                }
+                case 3:
+                case 13:
+                case 23:
+                case 30:
+                case 31:
+                case 32:
+                case 33: {
+                    j--;
+                    continue;
+                }
+
+                default:
+                    continue;
             }
+
         }
         auto finishThree = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsedThree = finishThree - startThree;
@@ -214,31 +204,24 @@ int simulate(const bool debug = false){
          * LOOP TWO. BEGINNING OF POPULATION CHECK AND SICK DAYS.
          */
         for (auto &it : population) {
-
-            if(it.checkAlive()){
-                aliveCount++;
-                if(it.checkInfected()){
-                    sickCount++;
+            switch(it.getCondition()){
+                case 0:{
+                    aliveCount++;
+                    continue;
+                }
+                case 1:{
                     it.sickDay();
+                    aliveCount++;
+                    sickCount++;
+                    continue;
                 }
-                else if(it.checkImmune()){
+                case 2:{
+                    aliveCount++;
                     recoveredCount++;
+                    continue;
                 }
-            }
-
-            if(debug){
-                if(it.checkInfected() and it.checkImmune()){
-                    std::cout << "Infected and immune detected, error in code. Ending process..." << std::endl;
-                    return -1;
-                }
-                if(!it.checkInfected() and !it.checkAlive()){
-                    std::cout << "Dead and not infected detected, error in code. Ending process..." << std::endl;
-                    return -1;
-                }
-                if(it.checkImmune() and !it.checkAlive()){
-                    std::cout << "Dead and immune detected, error in code. Ending process..." << std::endl;
-                    return -1;
-                }
+                default:
+                    continue;
             }
         }
         /**
@@ -246,6 +229,9 @@ int simulate(const bool debug = false){
          */
         /**------------------------------------------------------------------------------------------*/
 
+        /**
+         * Defining deadCount and neverInfected here so that they can be used in the debugging snippet.
+         */
         deadCount = maxPop - aliveCount;
         neverInfected = maxPop - sickCount - deadCount - recoveredCount;
         if(debug){
@@ -285,5 +271,6 @@ int simulate(const bool debug = false){
 }
 
 int main(){
-    simulate();
+    simulate(true);
 }
+
